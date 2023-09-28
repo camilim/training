@@ -24,26 +24,26 @@ int main()
     inFile.close();
   }
   //int nt; put inside loop 
-  //
-  //  for (int i=0; i < 7; i++)
-  //    { 
-  //        int nt = static_cast<int>((t_end-t_beg)/dt[i] + 1);
-  //            cout << i << " " << nt << " " << dt[i] << endl;
-  //                vector<double> t(nt);
-  //                    vector<double> x(nt);
-  //                      }
-  //                        
-  //                        /*
-  //                         t[0] = t_beg;
-  //                          x[0] = x0;
-  //                           for (int i=0, i < nt -1, i++)
-  //                            {
-  //                            	x[i+1] = (1.0 - 3.0*dt)*x[i];
-  //                            		t[i+1] = t[i] + dt;
-  //                            		 }
-  //                            		 for (int i=0; i < nt; i++)
-  //                            		 	{
-  //                            		 		std::cout << "t[" << i << "] = " << t[i] << ", x[" <<i << "] = " << x[i] << std::endl;
-  //                            		 			}*/
-                            		 			 return 0;
+  
+  for (int i=0; i < 7; i++)
+  { 
+    int nt = static_cast<int>((t_end-t_beg)/dt[i] + 1);
+    cout << i << " " << nt << " " << dt[i] << endl;
+    vector<double> t(nt);
+    vector<double> x(nt);
+    
+    t[0] = t_beg;
+    x[0] = x0;                            
+    for (int i=0; i < nt -1; i++)
+    //
+    {
+      x[i+1] = (1.0 - 3.0*dt[i])*x[i];
+      t[i+1] = t[i] + dt[i];   
+    }         		 
+    for (int i=0; i < nt; i++)
+    {
+       cout << "t[" << i << "] = " << t[i] << ", x[" <<i << "] = " << x[i] << endl;
+    }
+  } 
+  return 0;
 }
