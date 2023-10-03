@@ -28,21 +28,19 @@ int main()
   for (int i=0; i < 7; i++)
   { 
     int nt = static_cast<int>((t_end-t_beg)/dt[i] + 1);
-    cout << i << " " << nt << " " << dt[i] << endl;
     vector<double> t(nt);
     vector<double> x(nt);
-    
     t[0] = t_beg;
     x[0] = x0;                            
-    for (int i=0; i < nt -1; i++)
-    //
+    for (int j=0; j < nt -1; j++)
+    
     {
-      x[i+1] = (1.0 - 3.0*dt[i])*x[i];
-      t[i+1] = t[i] + dt[i];   
+      x[j+1] = (1.0 - 3.0*dt[i])*x[j];
+      t[j+1] = t[j] + dt[i];   
     }         		 
-    for (int i=0; i < nt; i++)
+    for (int j=0; j < nt; j++)
     {
-       cout << "t[" << i << "] = " << t[i] << ", x[" <<i << "] = " << x[i] << endl;
+    cout << "t[" << j << "] = " << t[j] << ", x[" << j << "] = " << x[j] << endl;
     }
   } 
   return 0;
