@@ -38,10 +38,14 @@ int main()
       x[j+1] = (1.0 - 3.0*dt[i])*x[j];
       t[j+1] = t[j] + dt[i];   
     }         		 
+    ofstream myfile;
+    myfile.open ("output.dat");
     for (int j=0; j < nt; j++)
     {
-    cout << "t[" << j << "] = " << t[j] << ", x[" << j << "] = " << x[j] << endl;
+
+    myfile << "t[" << j << "] = " << t[j] << ", x[" << j << "] = " << x[j] << endl;
     }
+    myfile.close();
   } 
   return 0;
 }
