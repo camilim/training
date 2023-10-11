@@ -18,7 +18,6 @@ int main()
     int i =0;
     while (inFile >> dt[i]) 
     { 
-      cout << dt[i] << endl;
       i++;
     }
     inFile.close();
@@ -43,7 +42,7 @@ int main()
     for (int j=0; j < nt; j++)
     {
 
-    myfile << "t[" << j << "] = " << t[j] << ", x[" << j << "] = " << x[j] << endl;
+    myfile << t[j] << " " << x[j]  << endl;
     }
     myfile.close();
   } 
