@@ -2,6 +2,7 @@
 #include <vector> 
 #include <fstream>
 #include <cmath>
+#include <string>
 using namespace std; 
 
 double x0 = 1;
@@ -37,14 +38,13 @@ int main()
       x[j+1] = (1.0 - 3.0*dt[i])*x[j];
       t[j+1] = t[j] + dt[i];   
     }         		 
-    ofstream myfile;
-    myfile.open ("output.dat");
-    for (int j=0; j < nt; j++)
+    ofstream myfile[i];
+    myfile[i].open ("output.dat"); 
+    for (int k=0; k < nt; k++)
     {
-
-    myfile << t[j] << " " << x[j]  << endl;
+      myfile << t[k] << " " << x[k]  << endl;
     }
-    myfile.close();
+    myfile[i].close();  
   } 
   return 0;
 }
